@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name GarageAndHeaterController)(type Legacy)(uri ${KIPRJMOD}/GarageAndHeaterController.lib)(options "")(descr ""))
+)

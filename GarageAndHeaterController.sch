@@ -1,0 +1,1380 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Garage and Heater Controller"
+Date "2021-05-02"
+Rev "1.0"
+Comp "dehnes.com"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 4800 6800 0    50   Input ~ 0
+VUSB
+Text GLabel 1200 5950 1    50   Input ~ 0
+3V3
+Text GLabel 6850 4800 2    50   Input ~ 0
+UART_TX
+Text GLabel 6850 4900 2    50   Input ~ 0
+UART_RX
+$Comp
+L Device:Antenna AE1
+U 1 1 604A5A95
+P 7850 1300
+F 0 "AE1" H 7930 1289 50  0000 L CNN
+F 1 "Antenna" H 7930 1198 50  0000 L CNN
+F 2 "Connector_Wire:SolderWire-0.75sqmm_1x01_D1.25mm_OD2.3mm" H 7850 1300 50  0001 C CNN
+F 3 "~" H 7850 1300 50  0001 C CNN
+	1    7850 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 7050 3600 2    50   Input ~ 0
+RN2483_RESET
+Wire Wire Line
+	7850 1700 7850 1500
+$Comp
+L Regulator_Linear:TC1186 U5
+U 1 1 60757986
+P 5550 6900
+F 0 "U5" H 5550 7225 50  0000 C CNN
+F 1 "TC1186" H 5550 7134 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5550 7175 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21350E.pdf" H 5250 7100 50  0001 C CNN
+	1    5550 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C7
+U 1 1 6076E79F
+P 4200 5950
+F 0 "C7" H 4000 5950 50  0000 L CNN
+F 1 "4n7" H 3950 5850 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4200 5950 50  0001 C CNN
+F 3 "~" H 4200 5950 50  0001 C CNN
+	1    4200 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 6076FD7D
+P 3850 5700
+F 0 "#PWR08" H 3850 5450 50  0001 C CNN
+F 1 "GND" H 3950 5700 50  0000 C CNN
+F 2 "" H 3850 5700 50  0001 C CNN
+F 3 "" H 3850 5700 50  0001 C CNN
+	1    3850 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 60772699
+P 4400 6000
+F 0 "R9" H 4470 6046 50  0000 L CNN
+F 1 "1M" H 4470 5955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4330 6000 50  0001 C CNN
+F 3 "~" H 4400 6000 50  0001 C CNN
+	1    4400 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 5850 4200 5850
+Connection ~ 4400 5850
+Connection ~ 4200 5850
+$Comp
+L power:GND #PWR010
+U 1 1 60785EE3
+P 4400 6150
+F 0 "#PWR010" H 4400 5900 50  0001 C CNN
+F 1 "GND" H 4405 5977 50  0000 C CNN
+F 2 "" H 4400 6150 50  0001 C CNN
+F 3 "" H 4400 6150 50  0001 C CNN
+	1    4400 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 6078834E
+P 4200 6150
+F 0 "#PWR09" H 4200 5900 50  0001 C CNN
+F 1 "GND" H 4205 5977 50  0000 C CNN
+F 2 "" H 4200 6150 50  0001 C CNN
+F 3 "" H 4200 6150 50  0001 C CNN
+	1    4200 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 6050 4200 6150
+Wire Wire Line
+	4800 6800 4950 6800
+Wire Wire Line
+	5150 6900 5100 6900
+Wire Wire Line
+	5100 6900 5100 6800
+Connection ~ 5100 6800
+Wire Wire Line
+	5100 6800 5150 6800
+$Comp
+L power:GND #PWR012
+U 1 1 607AF350
+P 5550 7400
+F 0 "#PWR012" H 5550 7150 50  0001 C CNN
+F 1 "GND" H 5555 7227 50  0000 C CNN
+F 2 "" H 5550 7400 50  0001 C CNN
+F 3 "" H 5550 7400 50  0001 C CNN
+	1    5550 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C8
+U 1 1 607B1BB6
+P 4950 7000
+F 0 "C8" H 5150 7000 50  0000 R CNN
+F 1 "10uF" H 5150 7100 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4950 7000 50  0001 C CNN
+F 3 "~" H 4950 7000 50  0001 C CNN
+	1    4950 7000
+	-1   0    0    1   
+$EndComp
+Connection ~ 4950 6800
+Wire Wire Line
+	4950 6800 5100 6800
+Wire Wire Line
+	4950 7300 5550 7300
+Wire Wire Line
+	4950 7100 4950 7300
+Wire Wire Line
+	4950 6900 4950 6800
+$Comp
+L Device:C_Small C9
+U 1 1 607C8714
+P 6100 7000
+F 0 "C9" H 6000 7000 50  0000 R CNN
+F 1 "10uF" H 6000 7100 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6100 7000 50  0001 C CNN
+F 3 "~" H 6100 7000 50  0001 C CNN
+	1    6100 7000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6100 7300 6100 7100
+Wire Wire Line
+	5950 6800 6100 6800
+Wire Wire Line
+	6100 6900 6100 6800
+Connection ~ 6100 6800
+Wire Wire Line
+	6100 6800 6400 6800
+Wire Wire Line
+	5550 7200 5550 7300
+Connection ~ 5550 7300
+Wire Wire Line
+	5550 7300 6100 7300
+Wire Wire Line
+	5550 7300 5550 7400
+Wire Wire Line
+	6850 4800 6700 4800
+Wire Wire Line
+	6850 4900 6700 4900
+Text Notes 5150 3600 0    50   ~ 0
+A3
+Wire Wire Line
+	7050 3600 6700 3600
+Text Notes 6750 3600 0    50   ~ 0
+D2
+$Comp
+L Connector:Conn_ARM_JTAG_SWD_10 J4
+U 1 1 6088BF2F
+P 9100 5400
+F 0 "J4" H 8657 5446 50  0000 R CNN
+F 1 "SHF-105-01-F-D-SM" H 8657 5355 50  0000 R CNN
+F 2 "GarageAndHeaterController:SHF-105-01-X-D-SM" H 9100 5400 50  0001 C CNN
+F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 8750 4150 50  0001 C CNN
+	1    9100 5400
+	1    0    0    -1  
+$EndComp
+Text GLabel 10200 5100 2    50   Input ~ 0
+RESET
+Text GLabel 5300 5900 3    50   Input ~ 0
+RESET
+$Comp
+L Device:R R12
+U 1 1 60891B7E
+P 10000 4900
+F 0 "R12" H 10070 4946 50  0000 L CNN
+F 1 "1k" H 10070 4855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9930 4900 50  0001 C CNN
+F 3 "~" H 10000 4900 50  0001 C CNN
+	1    10000 4900
+	1    0    0    -1  
+$EndComp
+Text GLabel 10200 5300 2    50   Input ~ 0
+SWDCLK
+Wire Wire Line
+	9600 5300 10000 5300
+Connection ~ 10000 5300
+Wire Wire Line
+	10000 5300 10200 5300
+Text GLabel 10000 4700 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	10000 4750 10000 4700
+Text GLabel 10200 5400 2    50   Input ~ 0
+SWDIO
+Wire Wire Line
+	10200 5400 9600 5400
+$Comp
+L power:GND #PWR014
+U 1 1 608A788C
+P 9100 6100
+F 0 "#PWR014" H 9100 5850 50  0001 C CNN
+F 1 "GND" H 9105 5927 50  0000 C CNN
+F 2 "" H 9100 6100 50  0001 C CNN
+F 3 "" H 9100 6100 50  0001 C CNN
+	1    9100 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 608A9816
+P 9000 6100
+F 0 "#PWR013" H 9000 5850 50  0001 C CNN
+F 1 "GND" H 9005 5927 50  0000 C CNN
+F 2 "" H 9000 6100 50  0001 C CNN
+F 3 "" H 9000 6100 50  0001 C CNN
+	1    9000 6100
+	1    0    0    -1  
+$EndComp
+Text GLabel 9100 4700 1    50   Input ~ 0
+3V3
+$Comp
+L Device:C_Small C11
+U 1 1 608AC56F
+P 10100 5800
+F 0 "C11" H 10200 5850 50  0000 L CNN
+F 1 "100n" H 10200 5750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 10100 5800 50  0001 C CNN
+F 3 "~" H 10100 5800 50  0001 C CNN
+	1    10100 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 608BB0C4
+P 9900 6100
+F 0 "#PWR015" H 9900 5850 50  0001 C CNN
+F 1 "GND" H 9905 5927 50  0000 C CNN
+F 2 "" H 9900 6100 50  0001 C CNN
+F 3 "" H 9900 6100 50  0001 C CNN
+	1    9900 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR016
+U 1 1 608BC435
+P 10100 6100
+F 0 "#PWR016" H 10100 5850 50  0001 C CNN
+F 1 "GND" H 10105 5927 50  0000 C CNN
+F 2 "" H 10100 6100 50  0001 C CNN
+F 3 "" H 10100 6100 50  0001 C CNN
+	1    10100 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 6100 10100 5900
+Wire Wire Line
+	9900 6100 9900 6000
+$Comp
+L Device:R R11
+U 1 1 608CC453
+P 9900 4900
+F 0 "R11" H 9700 4950 50  0000 L CNN
+F 1 "100k" H 9650 4850 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9830 4900 50  0001 C CNN
+F 3 "~" H 9900 4900 50  0001 C CNN
+	1    9900 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 5050 10000 5300
+Text GLabel 9900 4700 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	9900 4750 9900 4700
+Wire Wire Line
+	9900 5050 9900 5100
+Wire Wire Line
+	9600 5100 9900 5100
+Connection ~ 9900 5100
+Wire Wire Line
+	9900 5100 9900 5500
+Wire Wire Line
+	9900 5100 10200 5100
+Wire Wire Line
+	9100 4700 9100 4800
+Wire Wire Line
+	9100 6100 9100 6000
+Wire Wire Line
+	9000 6100 9000 6000
+Wire Wire Line
+	10100 5500 9900 5500
+Wire Wire Line
+	10100 5500 10100 5700
+Connection ~ 9900 5500
+Wire Wire Line
+	9900 5500 9900 5600
+$Comp
+L GarageAndHeaterController:ATSAMD21G18A-A U3
+U 2 1 60A4843F
+P 2100 7750
+F 0 "U3" H 1550 9700 50  0000 C CNN
+F 1 "ATSAMD21G18A-A" H 1800 9600 50  0000 C CNN
+F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 3000 5900 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf" H 2100 8750 50  0001 C CNN
+	2    2100 7750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GarageAndHeaterController:ATSAMD21G18A-A U3
+U 1 1 60A4D68E
+P 6000 4200
+F 0 "U3" H 5450 6150 50  0000 C CNN
+F 1 "ATSAMD21G18A-A" H 5700 6074 50  0000 C CNN
+F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 6900 2350 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf" H 6000 5200 50  0001 C CNN
+	1    6000 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 60A53ABC
+P 1200 6250
+F 0 "C2" H 1000 6250 50  0000 L CNN
+F 1 "100n" H 950 6150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1200 6250 50  0001 C CNN
+F 3 "~" H 1200 6250 50  0001 C CNN
+	1    1200 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6100 1200 6100
+Wire Wire Line
+	1200 6100 1200 6150
+$Comp
+L power:GND #PWR02
+U 1 1 60A5AF6B
+P 1200 6450
+F 0 "#PWR02" H 1200 6200 50  0001 C CNN
+F 1 "GND" H 1205 6277 50  0000 C CNN
+F 2 "" H 1200 6450 50  0001 C CNN
+F 3 "" H 1200 6450 50  0001 C CNN
+	1    1200 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6400 1200 6400
+Wire Wire Line
+	1200 6400 1200 6450
+Wire Wire Line
+	1200 6350 1200 6400
+Connection ~ 1200 6400
+Wire Wire Line
+	1200 5950 1200 6100
+Connection ~ 1200 6100
+$Comp
+L Device:C_Small C1
+U 1 1 60A6E1DF
+P 950 6800
+F 0 "C1" H 750 6800 50  0000 L CNN
+F 1 "100n" H 700 6700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 950 6800 50  0001 C CNN
+F 3 "~" H 950 6800 50  0001 C CNN
+	1    950  6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6650 950  6650
+Wire Wire Line
+	950  6650 950  6700
+Wire Wire Line
+	950  6900 950  6950
+Wire Wire Line
+	950  6950 1400 6950
+$Comp
+L power:GND #PWR01
+U 1 1 60A7B470
+P 950 7000
+F 0 "#PWR01" H 950 6750 50  0001 C CNN
+F 1 "GND" H 955 6827 50  0000 C CNN
+F 2 "" H 950 7000 50  0001 C CNN
+F 3 "" H 950 7000 50  0001 C CNN
+	1    950  7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  7000 950  6950
+Connection ~ 950  6950
+Text GLabel 950  6600 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	950  6600 950  6650
+Connection ~ 950  6650
+$Comp
+L Device:C_Small C4
+U 1 1 60A88698
+P 2350 6250
+F 0 "C4" H 2450 6300 50  0000 L CNN
+F 1 "100n" H 2450 6200 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2350 6250 50  0001 C CNN
+F 3 "~" H 2350 6250 50  0001 C CNN
+	1    2350 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 6100 2350 6100
+Wire Wire Line
+	2350 6100 2350 6150
+Wire Wire Line
+	2200 6400 2350 6400
+Wire Wire Line
+	2350 6400 2350 6350
+$Comp
+L power:GND #PWR04
+U 1 1 60A96A3D
+P 2350 6450
+F 0 "#PWR04" H 2350 6200 50  0001 C CNN
+F 1 "GND" H 2355 6277 50  0000 C CNN
+F 2 "" H 2350 6450 50  0001 C CNN
+F 3 "" H 2350 6450 50  0001 C CNN
+	1    2350 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 6400 2350 6450
+Connection ~ 2350 6400
+Text GLabel 2750 6550 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	2350 6100 2350 5950
+Connection ~ 2350 6100
+$Comp
+L Device:C_Small C5
+U 1 1 60AA5593
+P 2550 6800
+F 0 "C5" H 2350 6850 50  0000 L CNN
+F 1 "100n" H 2300 6750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2550 6800 50  0001 C CNN
+F 3 "~" H 2550 6800 50  0001 C CNN
+	1    2550 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C6
+U 1 1 60AA6CED
+P 2750 6800
+F 0 "C6" H 2850 6850 50  0000 L CNN
+F 1 "4u7" H 2850 6750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2750 6800 50  0001 C CNN
+F 3 "~" H 2750 6800 50  0001 C CNN
+	1    2750 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 6950 2550 6950
+Wire Wire Line
+	2750 6950 2750 6900
+Wire Wire Line
+	2550 6900 2550 6950
+Connection ~ 2550 6950
+Wire Wire Line
+	2550 6950 2750 6950
+Wire Wire Line
+	2200 6650 2550 6650
+Wire Wire Line
+	2750 6650 2750 6700
+Wire Wire Line
+	2550 6700 2550 6650
+Connection ~ 2550 6650
+Wire Wire Line
+	2550 6650 2750 6650
+Wire Wire Line
+	2750 6650 2750 6550
+Connection ~ 2750 6650
+$Comp
+L power:GND #PWR05
+U 1 1 60ACBE56
+P 2550 7000
+F 0 "#PWR05" H 2550 6750 50  0001 C CNN
+F 1 "GND" H 2555 6827 50  0000 C CNN
+F 2 "" H 2550 7000 50  0001 C CNN
+F 3 "" H 2550 7000 50  0001 C CNN
+	1    2550 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 7000 2550 6950
+$Comp
+L Device:C_Small C3
+U 1 1 60AD483C
+P 2250 7300
+F 0 "C3" H 2300 7400 50  0000 L CNN
+F 1 "1uF" H 2300 7250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2250 7300 50  0001 C CNN
+F 3 "~" H 2250 7300 50  0001 C CNN
+	1    2250 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 7150 2250 7150
+Wire Wire Line
+	2250 7150 2250 7200
+$Comp
+L power:GND #PWR03
+U 1 1 60ADE058
+P 2250 7500
+F 0 "#PWR03" H 2250 7250 50  0001 C CNN
+F 1 "GND" H 2255 7327 50  0000 C CNN
+F 2 "" H 2250 7500 50  0001 C CNN
+F 3 "" H 2250 7500 50  0001 C CNN
+	1    2250 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 7400 2250 7500
+$Comp
+L Device:R R10
+U 1 1 60BAF5C3
+P 5000 4300
+F 0 "R10" V 5100 4250 50  0000 L CNN
+F 1 "300R" V 5000 4200 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4930 4300 50  0001 C CNN
+F 3 "~" H 5000 4300 50  0001 C CNN
+	1    5000 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 60BB1F05
+P 4450 4350
+F 0 "#PWR011" H 4450 4100 50  0001 C CNN
+F 1 "GND" H 4455 4177 50  0000 C CNN
+F 2 "" H 4450 4350 50  0001 C CNN
+F 3 "" H 4450 4350 50  0001 C CNN
+	1    4450 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 4300 5150 4300
+$Comp
+L Device:LED D1
+U 1 1 60BA9C37
+P 4700 4300
+F 0 "D1" H 4700 4200 50  0000 C CNN
+F 1 "LED BLUE APTD2012LQBC/D" H 4450 4400 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 4700 4300 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/216/APTD2012LQBC-D-1102003.pdf" H 4700 4300 50  0001 C CNN
+	1    4700 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4300 4450 4300
+Wire Wire Line
+	4450 4300 4450 4350
+$Comp
+L GarageAndHeaterController:DX07S016JA1R1500 J3
+U 1 1 60761D22
+P 3800 5100
+F 0 "J3" H 3800 4433 50  0000 C CNN
+F 1 "DX07S016JA1R1500" H 3800 4524 50  0000 C CNN
+F 2 "GarageAndHeaterController:JAE_DX07S016JA1R1500" H 3800 5100 50  0001 L BNN
+F 3 "" H 3800 5100 50  0001 L BNN
+F 4 "3.31 mm" H 3800 5100 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
+F 5 "1" H 3800 5100 50  0001 L BNN "PARTREV"
+F 6 "JAE Industry Ltd." H 3800 5100 50  0001 L BNN "MANUFACTURER"
+F 7 "Manufacturer Recommendations" H 3800 5100 50  0001 L BNN "STANDARD"
+	1    3800 5100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 5000 5050 5000
+Wire Wire Line
+	5050 5150 5050 5000
+Connection ~ 5050 5000
+Wire Wire Line
+	5050 5000 5300 5000
+Wire Wire Line
+	4400 5100 4850 5100
+Wire Wire Line
+	4850 5150 4850 5100
+Connection ~ 4850 5100
+Wire Wire Line
+	4850 5100 5300 5100
+Wire Wire Line
+	4550 5150 4550 4900
+$Comp
+L GarageAndHeaterController:PRTR5V0U2X,215 D2
+U 1 1 6074EEC6
+P 4750 5450
+F 0 "D2" H 4600 5150 50  0000 L CNN
+F 1 "PRTR5V0U2X,215" H 4600 5050 50  0000 L CNN
+F 2 "GarageAndHeaterController:SOT143B" H 4750 5450 50  0001 L BNN
+F 3 "https://no.mouser.com/datasheet/2/916/PRTR5V0U2X-1320589.pdf" H 4750 5450 50  0001 L BNN
+	1    4750 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 5750 4550 5850
+Wire Wire Line
+	4550 5850 4400 5850
+Wire Wire Line
+	4400 4900 4550 4900
+Text GLabel 4700 4900 2    50   Input ~ 0
+VUSB
+Wire Wire Line
+	4550 4900 4700 4900
+Connection ~ 4550 4900
+Wire Wire Line
+	3700 5700 3700 5850
+Wire Wire Line
+	3700 5850 4200 5850
+$Comp
+L Device:R R8
+U 1 1 60807F89
+P 3100 5450
+F 0 "R8" H 3170 5496 50  0000 L CNN
+F 1 "5k1" H 3170 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3030 5450 50  0001 C CNN
+F 3 "~" H 3100 5450 50  0001 C CNN
+	1    3100 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 6080910D
+P 3000 5450
+F 0 "R13" H 3070 5496 50  0000 L CNN
+F 1 "5k1" H 3070 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2930 5450 50  0001 C CNN
+F 3 "~" H 3000 5450 50  0001 C CNN
+	1    3000 5450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3200 5150 3000 5150
+Wire Wire Line
+	3000 5150 3000 5300
+Wire Wire Line
+	3200 5250 3100 5250
+Wire Wire Line
+	3100 5250 3100 5300
+$Comp
+L power:GND #PWR07
+U 1 1 60819029
+P 3100 5650
+F 0 "#PWR07" H 3100 5400 50  0001 C CNN
+F 1 "GND" H 3200 5650 50  0000 C CNN
+F 2 "" H 3100 5650 50  0001 C CNN
+F 3 "" H 3100 5650 50  0001 C CNN
+	1    3100 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 6081946B
+P 3000 5650
+F 0 "#PWR06" H 3000 5400 50  0001 C CNN
+F 1 "GND" H 2900 5650 50  0000 C CNN
+F 2 "" H 3000 5650 50  0001 C CNN
+F 3 "" H 3000 5650 50  0001 C CNN
+	1    3000 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 5650 3100 5600
+Wire Wire Line
+	3000 5650 3000 5600
+$Comp
+L Device:C_Small C10
+U 1 1 60761D24
+P 6400 7000
+F 0 "C10" H 6300 7000 50  0000 R CNN
+F 1 "1uF" H 6300 7100 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6400 7000 50  0001 C CNN
+F 3 "~" H 6400 7000 50  0001 C CNN
+	1    6400 7000
+	-1   0    0    1   
+$EndComp
+Text GLabel 6550 6800 2    50   Input ~ 0
+3V3
+Wire Wire Line
+	6400 6900 6400 6800
+Wire Wire Line
+	6550 6800 6400 6800
+Connection ~ 6400 6800
+Wire Wire Line
+	6400 7100 6400 7300
+Wire Wire Line
+	6400 7300 6100 7300
+Connection ~ 6100 7300
+Text GLabel 6850 5700 2    50   Input ~ 0
+SWDIO
+Wire Wire Line
+	6850 5700 6700 5700
+Text GLabel 6850 5800 2    50   Input ~ 0
+SWDCLK
+Wire Wire Line
+	6850 5800 6700 5800
+$Comp
+L Connector:TestPoint_2Pole TP1
+U 1 1 607E2644
+P 9900 5800
+F 0 "TP1" V 9850 5650 50  0000 L CNN
+F 1 "TestPoint_2Pole" H 9950 5700 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9900 5800 50  0001 C CNN
+F 3 "~" H 9900 5800 50  0001 C CNN
+	1    9900 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L GarageAndHeaterController:Relay_NO K1
+U 1 1 6097950B
+P 4850 1250
+F 0 "K1" V 4650 1500 60  0000 R CNN
+F 1 "Relay_NO" V 4550 1800 60  0000 R CNN
+F 2 "GarageAndHeaterController:Omron-GSNB-1A" H 4850 1250 60  0001 C CNN
+F 3 "" H 4850 1250 60  0000 C CNN
+	1    4850 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4148 D3
+U 1 1 6097AD8F
+P 4600 1300
+F 0 "D3" V 4600 900 50  0000 L CNN
+F 1 "1N4148" V 4700 900 50  0000 L CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4600 1125 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 4600 1300 50  0001 C CNN
+	1    4600 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:PN2222A Q3
+U 1 1 6097C9D2
+P 4500 1900
+F 0 "Q3" H 4690 1946 50  0000 L CNN
+F 1 "PN2222A" H 4690 1855 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4700 1825 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/PN2222-D.PDF" H 4500 1900 50  0001 L CNN
+	1    4500 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR023
+U 1 1 6097E903
+P 4600 2200
+F 0 "#PWR023" H 4600 1950 50  0001 C CNN
+F 1 "GND" H 4700 2200 50  0000 C CNN
+F 2 "" H 4600 2200 50  0001 C CNN
+F 3 "" H 4600 2200 50  0001 C CNN
+	1    4600 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 6097FDE9
+P 4100 1900
+F 0 "R15" V 4000 1900 50  0000 C CNN
+F 1 "330" V 4100 1900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4030 1900 50  0001 C CNN
+F 3 "~" H 4100 1900 50  0001 C CNN
+	1    4100 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4600 1700 4600 1600
+Wire Wire Line
+	4600 2100 4600 2200
+Wire Wire Line
+	4300 1900 4250 1900
+Wire Wire Line
+	4900 1600 4600 1600
+Connection ~ 4600 1600
+Wire Wire Line
+	4600 1600 4600 1450
+Wire Wire Line
+	4600 1150 4600 1000
+Wire Wire Line
+	4900 1000 4600 1000
+Connection ~ 4600 1000
+Wire Wire Line
+	4600 1000 4600 800 
+Text GLabel 4600 800  1    50   Input ~ 0
+VUSB
+Text GLabel 5100 3300 0    50   Input ~ 0
+Relay_control
+Wire Wire Line
+	5300 3300 5100 3300
+Text GLabel 3900 1900 0    50   Input ~ 0
+Relay_control
+Wire Wire Line
+	3950 1900 3900 1900
+Text Notes 5150 3300 0    50   ~ 0
+D4
+$Comp
+L Transistor_FET:2N7000 Q2
+U 1 1 609950DD
+P 2150 2050
+F 0 "Q2" H 2354 2096 50  0000 L CNN
+F 1 "2N7000" H 2354 2005 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2350 1975 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 2150 2050 50  0001 L CNN
+	1    2150 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 60996ECB
+P 2250 2300
+F 0 "#PWR019" H 2250 2050 50  0001 C CNN
+F 1 "GND" H 2350 2300 50  0000 C CNN
+F 2 "" H 2250 2300 50  0001 C CNN
+F 3 "" H 2250 2300 50  0001 C CNN
+	1    2250 2300
+	1    0    0    -1  
+$EndComp
+Text GLabel 2250 1750 2    50   Input ~ 0
+GARAGE_CH1
+$Comp
+L Device:R R2
+U 1 1 60999802
+P 1750 2050
+F 0 "R2" V 1650 2050 50  0000 C CNN
+F 1 "10k" V 1750 2050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1680 2050 50  0001 C CNN
+F 3 "~" H 1750 2050 50  0001 C CNN
+	1    1750 2050
+	0    1    1    0   
+$EndComp
+Text GLabel 1550 2050 0    50   Input ~ 0
+GARAGE_CH1_CNTRL
+Wire Wire Line
+	1550 2050 1600 2050
+Wire Wire Line
+	1900 2050 1950 2050
+Wire Wire Line
+	2250 1850 2250 1750
+Wire Wire Line
+	2250 2250 2250 2300
+Text GLabel 5100 3100 0    50   Input ~ 0
+GARAGE_CH1_CNTRL
+Text Notes 5150 3100 0    50   ~ 0
+D5
+Wire Wire Line
+	5300 3100 5100 3100
+$Comp
+L Transistor_FET:2N7000 Q1
+U 1 1 609EA330
+P 2150 1250
+F 0 "Q1" H 2354 1296 50  0000 L CNN
+F 1 "2N7000" H 2354 1205 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2350 1175 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 2150 1250 50  0001 L CNN
+	1    2150 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 609EA33A
+P 2250 1500
+F 0 "#PWR018" H 2250 1250 50  0001 C CNN
+F 1 "GND" H 2350 1500 50  0000 C CNN
+F 2 "" H 2250 1500 50  0001 C CNN
+F 3 "" H 2250 1500 50  0001 C CNN
+	1    2250 1500
+	1    0    0    -1  
+$EndComp
+Text GLabel 2250 950  2    50   Input ~ 0
+GARAGE_CH2
+$Comp
+L Device:R R1
+U 1 1 609EA345
+P 1750 1250
+F 0 "R1" V 1650 1250 50  0000 C CNN
+F 1 "10k" V 1750 1250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1680 1250 50  0001 C CNN
+F 3 "~" H 1750 1250 50  0001 C CNN
+	1    1750 1250
+	0    1    1    0   
+$EndComp
+Text GLabel 1550 1250 0    50   Input ~ 0
+GARAGE_CH2_CNTRL
+Wire Wire Line
+	1550 1250 1600 1250
+Wire Wire Line
+	1900 1250 1950 1250
+Wire Wire Line
+	2250 1050 2250 950 
+Wire Wire Line
+	2250 1450 2250 1500
+Text GLabel 5100 3000 0    50   Input ~ 0
+GARAGE_CH2_CNTRL
+Wire Wire Line
+	5100 3000 5300 3000
+Text Notes 5150 2800 0    50   ~ 0
+A0
+Text GLabel 5100 2800 0    50   Input ~ 0
+GARAGE_LIGHT_READ
+Wire Wire Line
+	5100 2800 5300 2800
+Text GLabel 6900 2800 2    50   Input ~ 0
+GARAGE_CH1_READ
+Wire Wire Line
+	6900 2800 6700 2800
+Text Notes 6750 2800 0    50   ~ 0
+A1
+Text Notes 5150 3700 0    50   ~ 0
+A2
+Text Notes 5150 3000 0    50   ~ 0
+D6
+Text GLabel 5400 1200 2    50   Input ~ 0
+RELAY_OUT1
+Text GLabel 5400 1400 2    50   Input ~ 0
+RELAY_OUT2
+Wire Wire Line
+	5250 1200 5400 1200
+Wire Wire Line
+	5400 1400 5250 1400
+Wire Wire Line
+	2750 3650 2750 3950
+Wire Wire Line
+	2750 3950 2750 4050
+Connection ~ 2750 3950
+Wire Wire Line
+	3050 3950 2750 3950
+Connection ~ 2450 3850
+Wire Wire Line
+	2450 3850 2450 3650
+Wire Wire Line
+	2450 3850 2450 4050
+Wire Wire Line
+	3050 3850 2450 3850
+Connection ~ 2150 3750
+Wire Wire Line
+	2150 3750 2150 3650
+Wire Wire Line
+	2150 3750 2150 4050
+Wire Wire Line
+	3050 3750 2150 3750
+Text GLabel 3050 3850 2    50   Input ~ 0
+GARAGE_CH2_READ
+Text GLabel 3050 3750 2    50   Input ~ 0
+GARAGE_CH1_READ
+Text GLabel 3050 3950 2    50   Input ~ 0
+GARAGE_LIGHT_READ
+Wire Wire Line
+	2750 4350 2750 4450
+Wire Wire Line
+	2750 3250 2750 3350
+$Comp
+L power:GND #PWR022
+U 1 1 60A238FE
+P 2750 4450
+F 0 "#PWR022" H 2750 4200 50  0001 C CNN
+F 1 "GND" H 2850 4450 50  0000 C CNN
+F 2 "" H 2750 4450 50  0001 C CNN
+F 3 "" H 2750 4450 50  0001 C CNN
+	1    2750 4450
+	1    0    0    -1  
+$EndComp
+Text GLabel 2750 3250 1    50   Input ~ 0
+GARAGE_LIGHT
+$Comp
+L Device:R R14
+U 1 1 60A238F3
+P 2750 4200
+F 0 "R14" V 2650 4200 50  0000 C CNN
+F 1 "1k" V 2750 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2680 4200 50  0001 C CNN
+F 3 "~" H 2750 4200 50  0001 C CNN
+	1    2750 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 60A238E9
+P 2750 3500
+F 0 "R7" V 2650 3500 50  0000 C CNN
+F 1 "10k" V 2750 3500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2680 3500 50  0001 C CNN
+F 3 "~" H 2750 3500 50  0001 C CNN
+	1    2750 3500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2450 4350 2450 4450
+Wire Wire Line
+	2450 3250 2450 3350
+$Comp
+L power:GND #PWR021
+U 1 1 60A19E89
+P 2450 4450
+F 0 "#PWR021" H 2450 4200 50  0001 C CNN
+F 1 "GND" H 2550 4450 50  0000 C CNN
+F 2 "" H 2450 4450 50  0001 C CNN
+F 3 "" H 2450 4450 50  0001 C CNN
+	1    2450 4450
+	1    0    0    -1  
+$EndComp
+Text GLabel 2450 3250 1    50   Input ~ 0
+GARAGE_CH2
+$Comp
+L Device:R R6
+U 1 1 60A19E7E
+P 2450 4200
+F 0 "R6" V 2350 4200 50  0000 C CNN
+F 1 "1k" V 2450 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2380 4200 50  0001 C CNN
+F 3 "~" H 2450 4200 50  0001 C CNN
+	1    2450 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 60A19E74
+P 2450 3500
+F 0 "R5" V 2350 3500 50  0000 C CNN
+F 1 "10k" V 2450 3500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2380 3500 50  0001 C CNN
+F 3 "~" H 2450 3500 50  0001 C CNN
+	1    2450 3500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2150 4350 2150 4450
+Wire Wire Line
+	2150 3250 2150 3350
+$Comp
+L power:GND #PWR020
+U 1 1 60A05A51
+P 2150 4450
+F 0 "#PWR020" H 2150 4200 50  0001 C CNN
+F 1 "GND" H 2250 4450 50  0000 C CNN
+F 2 "" H 2150 4450 50  0001 C CNN
+F 3 "" H 2150 4450 50  0001 C CNN
+	1    2150 4450
+	1    0    0    -1  
+$EndComp
+Text GLabel 2150 3250 1    50   Input ~ 0
+GARAGE_CH1
+$Comp
+L Device:R R4
+U 1 1 60A0548D
+P 2150 4200
+F 0 "R4" V 2050 4200 50  0000 C CNN
+F 1 "1k" V 2150 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2080 4200 50  0001 C CNN
+F 3 "~" H 2150 4200 50  0001 C CNN
+	1    2150 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 60A04912
+P 2150 3500
+F 0 "R3" V 2050 3500 50  0000 C CNN
+F 1 "10k" V 2150 3500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2080 3500 50  0001 C CNN
+F 3 "~" H 2150 3500 50  0001 C CNN
+	1    2150 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L GarageAndHeaterController:push_in_terminal_2x J1
+U 1 1 60B51FE0
+P 900 3250
+F 0 "J1" H 700 3350 50  0000 C CNN
+F 1 "push_in_terminal_2x" H 933 3474 50  0001 C CNN
+F 2 "GarageAndHeaterController:push_in_terminal_2x" H 900 3600 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/670/tbl005a_500-2306935.pdf" H 900 3250 50  0001 C CNN
+	1    900  3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GarageAndHeaterController:push_in_terminal_2x J2
+U 1 1 60B575A9
+P 900 3550
+F 0 "J2" H 700 3650 50  0000 C CNN
+F 1 "push_in_terminal_2x" H 933 3774 50  0001 C CNN
+F 2 "GarageAndHeaterController:push_in_terminal_2x" H 900 3900 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/670/tbl005a_500-2306935.pdf" H 900 3550 50  0001 C CNN
+	1    900  3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GarageAndHeaterController:push_in_terminal_2x J5
+U 1 1 60B57AE0
+P 900 3850
+F 0 "J5" H 700 3950 50  0000 C CNN
+F 1 "push_in_terminal_2x" H 933 4074 50  0001 C CNN
+F 2 "GarageAndHeaterController:push_in_terminal_2x" H 900 4200 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/670/tbl005a_500-2306935.pdf" H 900 3850 50  0001 C CNN
+	1    900  3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GarageAndHeaterController:push_in_terminal_2x J6
+U 1 1 60B5800C
+P 900 4150
+F 0 "J6" H 700 4250 50  0000 C CNN
+F 1 "push_in_terminal_2x" H 933 4374 50  0001 C CNN
+F 2 "GarageAndHeaterController:push_in_terminal_2x" H 900 4500 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/670/tbl005a_500-2306935.pdf" H 900 4150 50  0001 C CNN
+	1    900  4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GarageAndHeaterController:push_in_terminal_2x J7
+U 1 1 60B584BB
+P 900 4450
+F 0 "J7" H 700 4550 50  0000 C CNN
+F 1 "push_in_terminal_2x" H 933 4674 50  0001 C CNN
+F 2 "GarageAndHeaterController:push_in_terminal_2x" H 900 4800 50  0001 C CNN
+F 3 "https://no.mouser.com/datasheet/2/670/tbl005a_500-2306935.pdf" H 900 4450 50  0001 C CNN
+	1    900  4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 60B58ECA
+P 6800 3200
+F 0 "R16" V 6900 3150 50  0000 L CNN
+F 1 "4k7" V 6800 3150 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6730 3200 50  0001 C CNN
+F 3 "~" H 6800 3200 50  0001 C CNN
+	1    6800 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 60B59CEE
+P 6950 3200
+F 0 "R17" V 6850 3150 50  0000 L CNN
+F 1 "4k7" V 6950 3150 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6880 3200 50  0001 C CNN
+F 3 "~" H 6950 3200 50  0001 C CNN
+	1    6950 3200
+	-1   0    0    1   
+$EndComp
+Text GLabel 7050 3400 2    50   Input ~ 0
+I2C_SDA
+Text GLabel 7050 3500 2    50   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	6700 3500 6950 3500
+Wire Wire Line
+	6700 3400 6800 3400
+Wire Wire Line
+	6800 3400 6800 3350
+Connection ~ 6800 3400
+Wire Wire Line
+	6800 3400 7050 3400
+Wire Wire Line
+	6950 3350 6950 3500
+Connection ~ 6950 3500
+Wire Wire Line
+	6950 3500 7050 3500
+Text GLabel 7050 3000 2    50   Input ~ 0
+3V3
+Wire Wire Line
+	6800 3050 6800 3000
+Wire Wire Line
+	6800 3000 6950 3000
+Wire Wire Line
+	6950 3050 6950 3000
+Connection ~ 6950 3000
+Wire Wire Line
+	6950 3000 7050 3000
+Text GLabel 1200 3200 2    50   Input ~ 0
+3V3
+$Comp
+L power:GND #PWR017
+U 1 1 60B8FE1A
+P 1200 3350
+F 0 "#PWR017" H 1200 3100 50  0001 C CNN
+F 1 "GND" H 1300 3350 50  0000 C CNN
+F 2 "" H 1200 3350 50  0001 C CNN
+F 3 "" H 1200 3350 50  0001 C CNN
+	1    1200 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 3300 1200 3300
+Wire Wire Line
+	1200 3300 1200 3350
+Wire Wire Line
+	1050 3200 1200 3200
+Text GLabel 1200 3500 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 1200 3600 2    50   Input ~ 0
+I2C_SDA
+Text GLabel 1200 3800 2    50   Input ~ 0
+RELAY_OUT1
+Text GLabel 1200 3900 2    50   Input ~ 0
+RELAY_OUT2
+Wire Wire Line
+	1050 3500 1200 3500
+Wire Wire Line
+	1200 3600 1050 3600
+Wire Wire Line
+	1050 3800 1200 3800
+Wire Wire Line
+	1200 3900 1050 3900
+Text GLabel 1200 4100 2    50   Input ~ 0
+GARAGE_CH1
+Wire Wire Line
+	1200 4100 1050 4100
+Text GLabel 1200 4200 2    50   Input ~ 0
+GARAGE_CH2
+Wire Wire Line
+	1200 4200 1050 4200
+Text GLabel 1200 4400 2    50   Input ~ 0
+GARAGE_LIGHT
+Wire Wire Line
+	1200 4400 1050 4400
+Text GLabel 2350 5950 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	8850 750  9600 750 
+Wire Wire Line
+	8850 850  9600 850 
+Wire Wire Line
+	7850 1700 8550 1700
+Wire Wire Line
+	8500 2000 8400 1950
+Wire Wire Line
+	8550 2000 8500 2000
+$Comp
+L power:GND #PWR0109
+U 1 1 605FFF3E
+P 8400 1950
+F 0 "#PWR0109" H 8400 1700 50  0001 C CNN
+F 1 "GND" H 8250 1950 50  0000 C CNN
+F 2 "" H 8400 1950 50  0001 C CNN
+F 3 "" H 8400 1950 50  0001 C CNN
+	1    8400 1950
+	1    0    0    -1  
+$EndComp
+Text GLabel 8550 1600 0    50   Input ~ 0
+RN2483_RESET
+Text GLabel 9600 750  2    50   Input ~ 0
+RN2483_UART_RX
+Text GLabel 8850 850  0    50   Input ~ 0
+UART_RX
+Text GLabel 9600 850  2    50   Input ~ 0
+RN2483_UART_TX
+Text GLabel 8850 750  0    50   Input ~ 0
+UART_TX
+Wire Wire Line
+	10300 1400 10300 1500
+Connection ~ 10300 1400
+Wire Wire Line
+	10150 1400 10300 1400
+Wire Wire Line
+	10300 1500 10150 1500
+Wire Wire Line
+	10300 1300 10300 1400
+Text GLabel 10300 1300 1    50   Input ~ 0
+3V3
+Wire Wire Line
+	10250 3800 10250 3850
+Wire Wire Line
+	10150 3800 10250 3800
+$Comp
+L power:GND #PWR0108
+U 1 1 604A2A87
+P 10250 3850
+F 0 "#PWR0108" H 10250 3600 50  0001 C CNN
+F 1 "GND" H 10255 3677 50  0000 C CNN
+F 2 "" H 10250 3850 50  0001 C CNN
+F 3 "" H 10250 3850 50  0001 C CNN
+	1    10250 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2100 8400 2100
+Wire Wire Line
+	10300 2100 10150 2100
+Text GLabel 10300 2100 2    50   Input ~ 0
+RN2483_UART_TX
+Text GLabel 8400 2100 0    50   Input ~ 0
+RN2483_UART_RX
+$Comp
+L GarageAndHeaterController:RN2483-I_RM095-RoomSensorV2 U4
+U 1 1 604443EF
+P 9350 2600
+F 0 "U4" H 9350 4067 50  0000 C CNN
+F 1 "RN2483-I_RM095" H 9350 3976 50  0000 C CNN
+F 2 "GarageAndHeaterController:RM095" H 9350 2600 50  0001 L BNN
+F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/RN2483-Data-Sheet-DS50002346E.pdf" H 9350 2600 50  0001 L BNN
+F 4 "Microchip" H 9350 2600 50  0001 L BNN "MANUFACTURER"
+	1    9350 2600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5300 2600
+NoConn ~ 5300 2700
+NoConn ~ 5300 2900
+NoConn ~ 5300 3200
+NoConn ~ 5300 3400
+NoConn ~ 5300 3500
+NoConn ~ 5300 3800
+NoConn ~ 5300 3900
+NoConn ~ 5300 4100
+NoConn ~ 5300 4200
+NoConn ~ 5300 4400
+NoConn ~ 5300 4500
+NoConn ~ 5300 4600
+NoConn ~ 5300 4700
+NoConn ~ 5300 4800
+NoConn ~ 5300 4900
+NoConn ~ 5300 5300
+NoConn ~ 5300 5400
+NoConn ~ 6700 2900
+NoConn ~ 6700 3700
+NoConn ~ 8550 1800
+NoConn ~ 8550 2400
+NoConn ~ 8550 2500
+NoConn ~ 8550 2600
+NoConn ~ 8550 2700
+NoConn ~ 8550 2800
+NoConn ~ 8550 2900
+NoConn ~ 8550 3000
+NoConn ~ 8550 3100
+NoConn ~ 8550 3200
+NoConn ~ 8550 3300
+NoConn ~ 8550 3400
+NoConn ~ 8550 3500
+NoConn ~ 8550 3600
+NoConn ~ 8550 3700
+NoConn ~ 10150 2800
+NoConn ~ 10150 2700
+NoConn ~ 10150 2500
+NoConn ~ 10150 2400
+NoConn ~ 10150 2000
+Text Notes 5150 4000 0    50   ~ 0
+A6
+Wire Wire Line
+	5300 3700 5100 3700
+Text GLabel 5100 3700 0    50   Input ~ 0
+GARAGE_CH2_READ
+NoConn ~ 5950 6900
+NoConn ~ 9600 5500
+NoConn ~ 9600 5600
+NoConn ~ 5300 3600
+NoConn ~ 5300 4000
+NoConn ~ 4400 5200
+NoConn ~ 4400 5300
+NoConn ~ 1050 4500
+$EndSCHEMATC
